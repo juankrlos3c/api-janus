@@ -1,0 +1,20 @@
+# Directories
+.idea/
+.sass-cache/
+.tmp/
+allure-results/
+bower_components/
+coverage/
+dist/
+tmp/
+node_modules/
+tslint-report/
+src/core/assets/svg-icons/dest/
+
+# Files
+.DS_Store
+.project
+.tern-project
+npm-debug.log
+yarn-error.log
+config/cadreon.js
