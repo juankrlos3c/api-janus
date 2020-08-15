@@ -4,6 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { DatabaseModule } from './database/database.module';
 import validationSchemaConfig from '../config/validation-schema';
+import googleBooksConfig from 'config/google-books.config';
 import databaseConfig from 'config/database.config';
 import appConfig from 'config/app.config';
 
@@ -14,7 +15,7 @@ import { BookModule } from './modules/book/book.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      load: [databaseConfig, appConfig],
+      load: [databaseConfig, appConfig, googleBooksConfig],
       validationSchema: validationSchemaConfig,
       validationOptions: {
         abortEarly: true,
