@@ -18,4 +18,13 @@ export class BookService {
 
     return books.data.items;
   }
+
+  async getBookById(bookId: string): Promise<BookType> {
+    const book = await axios.request({
+      method: 'GET',
+      url: `${this.baseUri}/volumes/${bookId}?key=${this.key}`,
+    });    
+
+    return book.data;
+  }
 }
