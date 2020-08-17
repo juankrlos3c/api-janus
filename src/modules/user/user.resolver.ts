@@ -10,8 +10,8 @@ export class UserResolver {
   constructor(private userService: UserService) {}
 
   @Query(returns => UserType)
-  User(@Args('id') id: string): Promise<User> {
-    return this.userService.getUser(id);
+  User(@Args('id', { nullable: true }) id?: string, @Args('googleId', { nullable: true }) googleId?: string): Promise<User> {
+    return id ? this.userService.getUser(id) : this.userService.getUserByGoogleId(googleId);
   }
 
   @Query(returns => [UserType])
