@@ -8,11 +8,16 @@ export class BookResolver {
   constructor(private bookService: BookService) {}
 
   @Query(returns => [BookType])
-  books(
+  Books(
     @Args('getBooksInput')
     getBooksInput: GetBooksInput,
   ): Promise<BookType[]> {
     const { maxResults, query } = getBooksInput;
     return this.bookService.getBooks(maxResults, query);
+  }
+
+  @Query(returns => BookType)
+  Book(@Args('bookId') bookId: string): Promise<BookType> {
+    return this.bookService.getBookById(bookId);
   }
 }

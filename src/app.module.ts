@@ -10,6 +10,7 @@ import appConfig from 'config/app.config';
 
 import { UserModule } from './modules/user/user.module';
 import { BookModule } from './modules/book/book.module';
+import { PlayerModule } from './modules/player/player.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { BookModule } from './modules/book/book.module';
     }),
     UserModule,
     BookModule,
+    PlayerModule,
   ],
   controllers: [],
   providers: [],
