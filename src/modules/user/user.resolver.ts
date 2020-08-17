@@ -11,7 +11,8 @@ export class UserResolver {
 
   @Query(returns => UserType)
   User(@Args('id', { nullable: true }) id?: string, @Args('googleId', { nullable: true }) googleId?: string): Promise<User> {
-    return id ? this.userService.getUser(id) : this.userService.getUserByGoogleId(googleId);
+    const searchById = id !== null && id !== undefined;
+    return searchById ? this.userService.getUser(id) : this.userService.getUserByGoogleId(googleId);
   }
 
   @Query(returns => [UserType])
