@@ -23,7 +23,7 @@ export class VolumeInfoType {
   @Field()
   publishedDate: string;
 
-  @Field()
+  @Field({ nullable: true })
   description: string;
 
   @Field(type => [IndustryIdentifierType])
