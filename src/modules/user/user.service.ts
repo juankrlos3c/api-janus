@@ -42,4 +42,8 @@ export class UserService {
   async getUser(id: string): Promise<User> {
     return this.userRepository.findOne({ id });
   }
+
+  async getUserByGoogleId(googleId: string): Promise<User> {
+    return this.userRepository.findOne({ googleId });
+  }
 }
